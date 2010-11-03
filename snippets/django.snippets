@@ -109,3 +109,41 @@ snippet stackedinline
 		model = $1
 		extra = ${2:3}
 
+# imports
+
+snippet User
+	from django.contrib.auth.models import User
+
+snippet settings
+	from django.conf import settings
+
+snippet login_required
+	from django.contrib.auth.decorators import login_required
+
+snippet http
+	from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidden
+
+snippet shortcuts
+	from django.shortcuts import get_object_or_404, redirect, reverse
+
+snippet require_POST
+	from django.views.decorators.http import require_POST
+
+snippet slugify
+	from django.template.defaultfilters import slugify
+
+snippet inlineformset
+	from django.forms.models import inlineformset_factory
+# Misc
+
+snippet debug
+	import ipdb
+	ipdb.set_trace()
+
+snippet manager
+	class ${1:ManagerName}(models.Manager):
+		use_for_related_fields = ${2:True}
+		
+		def get_query_set(self):
+			return super($1, self).get_query_set().filter(${3:filter})
+
